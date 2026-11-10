@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Order fact table with payment method breakdown and order totals in dollars."
+    columns:
+      - name: order_id
+        description: "Primary key for orders."
+        data_tests:
+          - unique
+          - not_null
+      - name: total_amount_dollars
+        description: "Total payment amount for the order in USD."
+        data_tests:
+          - not_null
+
+  - name: dim_customers
+    description: "Customer dimension table enriched with order history, lifetime value, and tier."
+    columns:
+      - name: customer_id
+        description: "Primary key for customers."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_tier
+        description: "Customer segmentation tier based on lifetime value and order count."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['VIP', 'Active', 'Prospect']
+

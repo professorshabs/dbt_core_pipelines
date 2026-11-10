@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw_shop
+    description: "Raw e-commerce seed tables loaded into the `main_raw` schema in DuckDB."
+    schema: main_raw
+    tables:
+      - name: raw_customers
+        description: "One row per registered customer."
+      - name: raw_orders
+        description: "One row per customer order."
+      - name: raw_payments
+        description: "One row per payment transaction (an order can have multiple payments)."
+

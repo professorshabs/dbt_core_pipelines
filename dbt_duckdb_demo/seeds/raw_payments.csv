@@ -1,0 +1,9 @@
+payment_id,order_id,payment_method,amount_cents
+1001,101,credit_card,2500
+1002,101,gift_card,500
+1003,102,credit_card,4200
+1004,103,bank_transfer,1800
+1005,104,credit_card,6500
+1006,105,credit_card,1500
+1007,106,gift_card,900
+
