@@ -9,6 +9,14 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: customer_id
+        description: "Foreign key to stg_customers."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: total_amount_dollars
         description: "Total payment amount for the order in USD."
         data_tests:
